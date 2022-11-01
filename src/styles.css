@@ -1,0 +1,107 @@
+h2 {
+  font-family: sans-serif;
+  border: 1px solid gray;
+  padding: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  border-color: rgb(178, 174, 174);
+  display: block;
+  max-width: 100%;
+  font-size: 10px;
+  position: relative;
+  text-transform: capitalize;
+}
+li {
+  list-style: none;
+}
+.search {
+  background-color: rgb(7, 7, 70);
+  color: white;
+  border-radius: 4px;
+  border-style: none;
+  padding: 3px 6px 3px 6px;
+  margin-bottom: 20px;
+  font-size: smaller;
+  position: relative;
+}
+.current {
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+  border-style: none;
+  padding: 3px 6px 3px 6px;
+  margin-bottom: 20px;
+  font-size: smaller;
+  position: relative;
+}
+.col {
+  margin-left: 600px;
+}
+h2 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: medium;
+  text-transform: none;
+  color: #6c757d;
+}
+.temperature-description {
+  text-transform: capitalize;
+}
+h1 {
+  text-transform: capitalize;
+  text-decoration-style: solid;
+  color: #6c757d;
+  font-size: 30px;
+}
+.current-location {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  border-style: none;
+  padding: 3px 6px 3px 6px;
+  margin-bottom: 20px;
+  font-size: smaller;
+  position: relative;
+}
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(0, 0, 0) 11.2%,
+    rgb(11, 132, 145) 91.1%
+  );
+}
+.card {
+  background: linear-gradient(
+    109.6deg,
+    rgb(0, 0, 0) 11.2%,
+    rgb(11, 132, 145) 91.1%
+  );
+}
+.container {
+  margin-left: 0px;
+}
+.temp {
+  color: #6c757d;
+}
+h5 {
+  color: #0b7e8a;
+  font-size: 50px;
+}
+h6 {
+  font-size: 20px;
+}
+input {
+  opacity: 0.5;
+  border-color: bisque;
+  border-style: solid;
+  border-width: 1px;
+}
+p {
+  color: bisque;
+}
