@@ -23,8 +23,13 @@
   <div class="card">
     <div class="card-body">
       <h5 clas="card-title">WeatherTime</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Today's forecast</h6>
-      <br />
+      <h6 class="card-subtitle mb-2 text-muted">Today's forecast
+        <br />
+        <div class="description">
+          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon" />
+          <span id="description"><strong>Cloudy</strong></span>
+        </div>
+      </h6>
     </div>
     <div class="container">
       <div class="all info">
@@ -51,13 +56,18 @@
             <div class="current-city">
               <h1 id="city"><strong>Barcelona</strong></h1>
               <h3>
-                Sunday 15:32 </br>
+                Sunday 15:32 </br></li>
               </h3>
             </div>
           </div>
           <div class="col-4">
             <div class="temp">
-              <span class="temperature" id="temperature"><strong>28</strong></span><span class="units">ºC</span>
+
+              <span class="temperature" id="temperature"><strong>28</strong></span>
+              <span class="units">
+                <a href="#" id="celsius-link">ºC</a> |
+                <a href="#" id="fahrenheit-link">ºF</a>
+              </span>
             </div>
           </div>
           <div class="col-4">
