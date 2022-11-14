@@ -43,7 +43,17 @@ function weatherConditions(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  celsiusTemperature = Math.round(response.data.main.temp);
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function searchCity(city) {
   let apiKey = "ff7ebdc6e7879a14c24fac0169b98522";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -68,3 +78,19 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector(".current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("Barcelona");
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureFahrenheit = document.querySelector("#temperature");
+  temperatureFahrenheit.innerHTML = Math.round(
+    (celsiusTemperature * 9) / 5 + 32
+  );
+}
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureCelsius = document.querySelector("#temperature");
+  temperatureCelsius.innerHTML = 28;
+}
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
