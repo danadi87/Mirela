@@ -17,9 +17,11 @@ h2 {
 li {
   list-style: none;
   text-align: left;
+  color: rgb(3, 22, 65);
 }
 .search {
-  background-color: rgb(7, 7, 70);
+  background: #367e18;
+  opacity: 0.8;
   color: white;
   border-radius: 4px;
   border-style: none;
@@ -29,7 +31,8 @@ li {
   position: relative;
 }
 .current {
-  background-color: green;
+  background: rgb(3, 22, 65);
+  opacity: 0.8;
   color: white;
   border-radius: 4px;
   border-style: none;
@@ -49,7 +52,7 @@ h2 {
 h3 {
   font-size: medium;
   text-transform: none;
-  color: #6c757d;
+  color: rgb(3, 22, 65);
 }
 .temperature-description {
   text-transform: capitalize;
@@ -57,11 +60,12 @@ h3 {
 h1 {
   text-transform: capitalize;
   text-decoration-style: solid;
-  color: #6c757d;
+  color: rgb(3, 22, 65);
   font-size: 30px;
 }
 .current-location {
-  background-color: black;
+  background-color: rgb(3, 22, 65);
+  opacity: 0.8;
   color: white;
   border-radius: 4px;
   border-style: none;
@@ -71,18 +75,50 @@ h1 {
   position: relative;
 }
 body {
-  background: linear-gradient(
-    108.6deg,
-    rgb(0, 0, 0) 9.2%,
-    rgb(11, 132, 145) 92.1%
-  );
+  background-color: #bfdfec;
+  background-repeat: repeat-x;
+  background-image: url("https://i.stack.imgur.com/b7z29.png");
+  animation: movement 10s linear infinite;
+}
+@keyframes movement {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 560px 0px;
+  }
+}
+
+adiv {
+  display: block;
+  position: absolute;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  margin-top: -50px;
+  margin-left: -100px;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  padding: 2rem;
 }
 .card {
-  background: linear-gradient(
-    108.6deg,
-    rgb(0, 0, 0) 9.2%,
-    rgb(11, 132, 145) 92.1%
-  );
+  background-color: #bfdfec;
+  background-repeat: repeat-x;
+  background-image: url("https://i.stack.imgur.com/b7z29.png");
+  animation: movement 10s linear infinite;
 }
 .container {
   margin-left: 0px;
@@ -104,7 +140,7 @@ input {
   border-width: 1px;
 }
 p {
-  color: bisque;
+  color: rgb(3, 22, 65);
 }
 .description {
   font-size: 15px;
@@ -116,15 +152,24 @@ ul {
   margin-left: 0px;
 }
 .weather-forecast {
-  color: bisque;
+  color: rgb(3, 22, 65);
   margin-top: 20px;
   text-align: center;
   margin-bottom: 20px;
 }
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
 }
 .weather-forecast-temperature-min {
   opacity: 0.5;
+}
+.card-forecast {
+  background: linear-gradient(
+    109.6deg,
+    rgb(121, 203, 202) 11.2%,
+    rgb(119, 161, 211) 91.1%
+  );
+  opacity: 0.8;
+  border-radius: 10px;
+  border-style: groove;
 }
