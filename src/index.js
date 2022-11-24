@@ -23,6 +23,41 @@ if (minutes < 10) {
   minutes = `${minutes}`;
 }
 h3.innerHTML = `${day} ${hours}:${minutes}`;
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+      <img
+        src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+        alt="Clear"
+        id="icon"
+        width="36px"
+      />
+      <div class="weather-forecast-temperature">
+        <span class="weather-forecast-temperature-max">18º</span>
+        <span class="weather-forecast-temperature-min">12º</span>
+      </div>
+    </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  let apiKey = "ff7ebdc6e7879a14c24fac0169b98522";
+  let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${
+    coordinates.lat
+  }&lon=${coordinates.lon}&exclude=${
+    (minutely, hourly, alerts)
+  }&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
 function enterCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-input");
@@ -52,6 +87,7 @@ function weatherConditions(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -94,3 +130,5 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+displayForecast();
